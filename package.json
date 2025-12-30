@@ -1,6 +1,6 @@
 {
-  "name": "@fastify/static",
-  "version": "9.0.0",
+  "name": "waibu-fastify-static",
+  "version": "2.0.0",
   "description": "Plugin for serving static files as fast as possible.",
   "main": "index.js",
   "type": "commonjs",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fastify/fastify-static.git"
+    "url": "git+https://github.com/ardhi/waibu-fastify-static.git"
   },
   "keywords": [
     "fastify",
@@ -44,9 +44,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fastify/fastify-static/issues"
+    "url": "https://github.com/ardhi/waibu-fastify-static/issues"
   },
-  "homepage": "https://github.com/fastify/fastify-static",
+  "homepage": "https://github.com/ardhi/waibu-fastify-static",
   "funding": [
     {
       "type": "github",
