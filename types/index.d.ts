@@ -1,7 +1,3 @@
-// Definitions by: Jannik <https://github.com/jannikkeye>
-//                 Leo <https://github.com/leomelzer>
-/// <reference types="node" />
-
 import { FastifyPluginAsync, FastifyReply, FastifyRequest, RouteOptions } from 'fastify'
 import { Stats } from 'node:fs'
 
@@ -86,18 +82,19 @@ declare namespace fastifyStatic {
 
   type Root = string | string[] | URL | URL[]
 
-  type RootOptions = {
-    serve: true;
-    root: Root;
-  } | {
-    serve?: false;
-    root?: Root;
-  }
+  type RootOptions =
+    | {
+      serve: true;
+      root: Root;
+    }
+    | {
+      serve?: false;
+      root?: Root;
+    }
 
-  export type FastifyStaticOptions =
-    SendOptions
-    & RootOptions
-    & {
+  export type FastifyStaticOptions = SendOptions &
+    RootOptions &
+    Omit<import('fastify').RegisterOptions, 'logLevel'> & {
       // Added by this plugin
       prefix?: string;
       prefixAvoidTrailingSlash?: boolean;
@@ -108,7 +105,11 @@ declare namespace fastifyStatic {
       wildcard?: boolean;
       globIgnore?: string[];
       list?: boolean | ListOptionsJsonFormat | ListOptionsHtmlFormat;
-      allowedPath?: (pathName: string, root: string, request: FastifyRequest) => boolean;
+      allowedPath?: (
+        pathName: string,
+        root: string,
+        request: FastifyRequest
+      ) => boolean;
       /**
        * @description
        * Opt-in to looking for pre-compressed files
@@ -127,7 +128,7 @@ declare namespace fastifyStatic {
       lastModified?: boolean;
       maxAge?: string | number;
       constraints?: RouteOptions['constraints'];
-      logLevel?: RouteOptions['logLevel'];
+      logLevel?: NonNullable<RouteOptions['logLevel']>;
     }
 
   export const fastifyStatic: FastifyStaticPlugin
