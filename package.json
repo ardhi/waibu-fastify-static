@@ -1,5 +1,5 @@
 {
-  "name": "@fastify/static",
+  "name": "waibu-fastify-static",
   "version": "9.0.0",
   "description": "Plugin for serving static files as fast as possible.",
   "main": "index.js",
