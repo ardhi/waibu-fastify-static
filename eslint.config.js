@@ -3,5 +3,5 @@
 module.exports = require('neostandard')({
   ignores: require('neostandard').resolveIgnoresFromGitignore(),
   noJsx: true,
-  ts: true,
+  ts: true
 })

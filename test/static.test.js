@@ -3007,7 +3007,7 @@ test(
       root: path.join(__dirname, '/static-pre-compressed'),
       prefix: '/static-pre-compressed/',
       preCompressed: true,
-      redirect: true,
+      redirect: true
     }
 
     const fastify = Fastify()
@@ -3613,9 +3613,9 @@ test('register /static/ with custom log level', async t => {
             console.warn(logLine)
             throw new Error('Should never reach this point since log level is set at WARN!! Unexpected log line: ' + logLine)
           }
-        },
-      },
-    },
+        }
+      }
+    }
   })
   fastify.register(fastifyStatic, pluginOptions)
 
